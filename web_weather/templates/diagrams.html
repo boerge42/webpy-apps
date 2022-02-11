@@ -1,0 +1,12 @@
+$def with (diagrams)
+
+<h2>Diagrams</h2>
+
+<ul id="navigation">
+	$for day in days:
+		<li><a href="/diagrams/$convert_day(day)/">$convert_day(day)</a></li>
+</ul>
+
+<hr>
+$for d in diagrams:
+	<img src="/$d['image']" alt="???">

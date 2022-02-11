@@ -1,0 +1,159 @@
+$def with (current, min_max)
+
+<table>
+    <tr>
+        <th>Sensor</th>
+        <th>Temperature</th>
+        <th>Pressure (rel.)</th>
+        <th>Humidity</th>
+        <th>Luminosity</th>
+    </tr>
+    <tr><td colspan=5, align=center><b>Current</b></td></tr>
+    <tr>
+        <td>TMP36</td>
+        <td align=center>$current['TMP36'][0]['temperature']°C</td>
+        <td align=center>-</td>
+        <td align=center>-</td>
+        <td align=center>-</td>
+    </tr>
+    <tr>
+        <td>SHT15</td>
+        <td align=center>$current['SHT15'][0]['temperature']°C</td>
+        <td align=center>-</td>
+        <td align=center>$current['SHT15'][0]['humidity']%</td>
+        <td align=center>-</td>
+    </tr>
+    <tr>
+        <td>BME280</td>
+        <td align=center>$current['BME280'][0]['temperature']°C</td>
+        <td align=center>$current['BME280'][0]['pressure_rel']hPa</td>
+        <td align=center>$current['BME280'][0]['humidity']%</td>
+        <td align=center>-</td>
+    </tr>
+    <tr>
+        <td>BM1750</td>
+        <td align=center>-</td>
+        <td align=center>-</td>
+        <td align=center>-</td>
+        <td align=center>$current['BH1750'][0]['luminosity']lux</td>
+    </tr>
+    <tr><td colspan=5, align=center><b>Min./Max. today</b></td></tr>
+    <tr>
+        <td>TMP36</td>
+        <td align=center>$min_max['td']['TMP36'][0]['min_temperature']°C/$min_max['td']['TMP36'][0]['max_temperature']°C</td>
+        <td align=center>-</td>
+        <td align=center>-</td>
+        <td align=center>-</td>
+    </tr>
+    <tr>
+        <td>SHT15</td>
+        <td align=center>$min_max['td']['SHT15'][0]['min_temperature']°C/$min_max['td']['SHT15'][0]['max_temperature']°C</td>
+        <td align=center>-</td>
+        <td align=center>$min_max['td']['SHT15'][0]['min_humidity']%/$min_max['td']['SHT15'][0]['max_humidity']%</td>
+        <td align=center>-</td>
+    </tr>
+    <tr>
+        <td>BME280</td>
+        <td align=center>$min_max['td']['BME280'][0]['min_temperature']°C/$min_max['td']['BME280'][0]['max_temperature']°C</td>
+        <td align=center>$min_max['td']['BME280'][0]['min_pressure_rel']hPa/$min_max['td']['BME280'][0]['max_pressure_rel']hPa</td>
+        <td align=center>$min_max['td']['BME280'][0]['min_humidity']%/$min_max['td']['BME280'][0]['max_humidity']%</td>
+        <td align=center>-</td>
+    </tr>
+    <tr>
+        <td>BH1750</td>
+        <td align=center>-</td>
+        <td align=center>-</td>
+        <td align=center>-</td>
+        <td align=center>$min_max['td']['BH1750'][0]['min_luminosity']lux/$min_max['td']['BH1750'][0]['max_luminosity']lux</td>
+    </tr>
+    <tr><td colspan=5, align=center><b>Min./Max. 1d</b></td></tr>
+    <tr>
+        <td>TMP36</td>
+        <td align=center>$min_max['1d']['TMP36'][0]['min_temperature']°C/$min_max['1d']['TMP36'][0]['max_temperature']°C</td>
+        <td align=center>-</td>
+        <td align=center>-</td>
+        <td align=center>-</td>
+    </tr>
+    <tr>
+        <td>SHT15</td>
+        <td align=center>$min_max['1d']['SHT15'][0]['min_temperature']°C/$min_max['1d']['SHT15'][0]['max_temperature']°C</td>
+        <td align=center>-</td>
+        <td align=center>$min_max['1d']['SHT15'][0]['min_humidity']%/$min_max['1d']['SHT15'][0]['max_humidity']%</td>
+        <td align=center>-</td>
+    </tr>
+    <tr>
+        <td>BME280</td>
+        <td align=center>$min_max['1d']['BME280'][0]['min_temperature']°C/$min_max['1d']['BME280'][0]['max_temperature']°C</td>
+        <td align=center>$min_max['1d']['BME280'][0]['min_pressure_rel']hPa/$min_max['1d']['BME280'][0]['max_pressure_rel']hPa</td>
+        <td align=center>$min_max['1d']['BME280'][0]['min_humidity']%/$min_max['1d']['BME280'][0]['max_humidity']%</td>
+        <td align=center>-</td>
+    </tr>
+    <tr>
+        <td>BH1750</td>
+        <td align=center>-</td>
+        <td align=center>-</td>
+        <td align=center>-</td>
+        <td align=center>$min_max['1d']['BH1750'][0]['min_luminosity']lux/$min_max['1d']['BH1750'][0]['max_luminosity']lux</td>
+    </tr>
+    <tr><td colspan=5, align=center><b>Min./Max. 7d</b></td></tr>
+    <tr>
+        <td>TMP36</td>
+        <td align=center>$min_max['7d']['TMP36'][0]['min_temperature']°C/$min_max['7d']['TMP36'][0]['max_temperature']°C</td>
+        <td align=center>-</td>
+        <td align=center>-</td>
+        <td align=center>-</td>
+    </tr>
+    <tr>
+        <td>SHT15</td>
+        <td align=center>$min_max['7d']['SHT15'][0]['min_temperature']°C/$min_max['7d']['SHT15'][0]['max_temperature']°C</td>
+        <td align=center>-</td>
+        <td align=center>$min_max['7d']['SHT15'][0]['min_humidity']%/$min_max['7d']['SHT15'][0]['max_humidity']%</td>
+        <td align=center>-</td>
+    </tr>
+    <tr>
+        <td>BME280</td>
+        <td align=center>$min_max['7d']['BME280'][0]['min_temperature']°C/$min_max['7d']['BME280'][0]['max_temperature']°C</td>
+        <td align=center>$min_max['7d']['BME280'][0]['min_pressure_rel']hPa/$min_max['7d']['BME280'][0]['max_pressure_rel']hPa</td>
+        <td align=center>$min_max['7d']['BME280'][0]['min_humidity']%/$min_max['7d']['BME280'][0]['max_humidity']%</td>
+        <td align=center>-</td>
+    </tr>
+    <tr>
+        <td>BH1750</td>
+        <td align=center>-</td>
+        <td align=center>-</td>
+        <td align=center>-</td>
+        <td align=center>$min_max['7d']['BH1750'][0]['min_luminosity']lux/$min_max['7d']['BH1750'][0]['max_luminosity']lux</td>
+    </tr>
+    <tr><td colspan=5, align=center><b>Min./Max. 30d</b></td></tr>
+    <tr>
+        <td>TMP36</td>
+        <td align=center>$min_max['30d']['TMP36'][0]['min_temperature']°C/$min_max['30d']['TMP36'][0]['max_temperature']°C</td>
+        <td align=center>-</td>
+        <td align=center>-</td>
+        <td align=center>-</td>
+    </tr>
+    <tr>
+        <td>SHT15</td>
+        <td align=center>$min_max['30d']['SHT15'][0]['min_temperature']°C/$min_max['30d']['SHT15'][0]['max_temperature']°C</td>
+        <td align=center>-</td>
+        <td align=center>$min_max['30d']['SHT15'][0]['min_humidity']%/$min_max['30d']['SHT15'][0]['max_humidity']%</td>
+        <td align=center>-</td>
+    </tr>
+    <tr>
+        <td>BME280</td>
+        <td align=center>$min_max['30d']['BME280'][0]['min_temperature']°C/$min_max['30d']['BME280'][0]['max_temperature']°C</td>
+        <td align=center>$min_max['30d']['BME280'][0]['min_pressure_rel']hPa/$min_max['30d']['BME280'][0]['max_pressure_rel']hPa</td>
+        <td align=center>$min_max['30d']['BME280'][0]['min_humidity']%/$min_max['30d']['BME280'][0]['max_humidity']%</td>
+        <td align=center>-</td>
+    </tr>
+    <tr>
+        <td>BH1750</td>
+        <td align=center>-</td>
+        <td align=center>-</td>
+        <td align=center>-</td>
+        <td align=center>$min_max['30d']['BH1750'][0]['min_luminosity']lux/$min_max['30d']['BH1750'][0]['max_luminosity']lux</td>
+    </tr>
+</table>
+
+<hr>
+Last ESP-Data: Timestamp: $current['ESP'][0]['time'], Awake time: $current['ESP'][0]['awake_time']ms, Vbat: $current['ESP'][0]['vbat']V, Vcc: $current['ESP'][0]['vcc']V   

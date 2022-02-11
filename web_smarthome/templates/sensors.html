@@ -1,0 +1,35 @@
+$def with (sensors)
+
+<h2>Sensors</h2>
+
+<table>
+	<caption>Sensor list</caption>
+	<tbody>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>manufacturername</th>
+        <th>modelid</th>
+        <th>type</th>
+        <th>reachable</th>
+        <th>lastseen</th>
+        <th>battery</th>
+        <th>value</th>
+        <th>unit</th>
+    </tr>
+$for s in sensors:
+    <tr style="height:32px">
+        <td>$s["id"]</td>
+        <td><a href="/details/sensors/$s["id"]">$s["name"]</a></td>
+        <td>$s["manufacturername"]</td>
+        <td>$s["modelid"]</td>
+        <td>$s["type"]</td>
+        <td align="center"><img src="/$s['reachable_icon']" alt=""></td>
+        <td>$s["lastseen"]</td>
+        <td>$s["battery"]</td>
+        <td>$s["value"]</td>
+        <td>$s["unit"]</td>
+    </tr>
+</tbody>
+<tfoot><tr></tr></tfoot>    
+</table>  

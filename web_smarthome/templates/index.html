@@ -1,0 +1,33 @@
+$def with (lights)
+
+<h2>Lights</h2>
+
+<table>
+	<caption>Light list</caption>
+	<tbody>
+    <tr>
+        <th>id</th>
+        <th>name</th>
+        <th>manufacturername</th>
+        <th>modelid</th>
+        <th>type</th>
+        <th>reachable</th>
+        <th>lastseen</th>
+        <th>on</th>
+        <th>bri</th>
+    </tr>
+$for l in lights:
+    <tr>
+        <td>$l["id"]</td>
+        <td><a href="/details/lights/$l["id"]">$l["name"]</a></td>
+        <td>$l["manufacturername"]</td>
+        <td>$l["modelid"]</td>
+        <td>$l["type"]</td>
+        <td align="center"><img src="/$l['reachable_icon']" alt="???"></td>
+        <td>$l["lastseen"]</td>
+        <td><a href="/set_state/on/$l["on_link"]/$l["id"]"><img src="/$l['on_link_icon']" alt=""></a></td>
+        <td>$l["bri"]</td>
+    </tr>
+</tbody>
+<tfoot><tr></tr></tfoot>    
+</table>  

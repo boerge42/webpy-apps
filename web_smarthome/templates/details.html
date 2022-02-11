@@ -1,0 +1,13 @@
+$def with (text, type, id, form)
+
+<h2>Details ($type, id=$id)</h2>
+<pre>
+<code>
+$text
+</code>
+</pre>
+
+<form method="POST">
+    $:form.render() 
+</form>
+

@@ -1,0 +1,11 @@
+$def with (heatmap_diagrams, years)
+<h2>Heatmaps</h2>
+
+<ul id="navigation">
+	$for y in years:
+		<li><a href="/heatmaps/$y/">$y</a></li>
+</ul>
+
+<hr>
+$for h in heatmap_diagrams:
+	<img src="/$h['image']" alt="???">

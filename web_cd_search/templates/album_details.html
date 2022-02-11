@@ -1,0 +1,23 @@
+$def with (albums)
+
+<table>
+	<caption>Album details</caption>
+	<tbody>
+    <tr>
+        <th>Artist</th>
+        <th>Album</th>
+        <th>Title</th>
+        <th>Year</th>
+        <th>Time</th>
+    </tr>
+$for album in albums:
+    <tr>
+        <td>$album.artist</td>
+        <td>$album.album</td>
+        <td>$album.title</td>
+        <td>$album.year</td>
+        <td>$album.duration_str</td>
+    </tr>
+</tbody>
+<tfoot><tr></tr></tfoot>    
+</table>  
