@@ -1,0 +1,16 @@
+$def with (fn)
+
+<b>database.html</b>
+<hr>
+
+<table border=1 cellpadding="5">
+    <tr>
+        <th>first</th>
+        <th>name</th>
+    </tr>
+$for l in fn:
+    <tr>
+        <td>$l["first"]</td>
+        <td>$l["name"]</td>
+    </tr>
+</table> 
