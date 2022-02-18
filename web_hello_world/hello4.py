@@ -1,5 +1,8 @@
 import web
 
+from web.template import ALLOWED_AST_NODES
+ALLOWED_AST_NODES.append('Constant')
+
 urls = (
     '/(.*)', 'index'
 )

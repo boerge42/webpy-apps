@@ -1,5 +1,8 @@
 import web
 
+from web.template import ALLOWED_AST_NODES
+ALLOWED_AST_NODES.append('Constant')
+
 urls = (
     '/', 'index'
 )
@@ -8,7 +11,7 @@ render = web.template.render('templates/', base="base")
 
 class index:
     def GET(self):
-        hello = 'Hallo CLT, wie geht es?'
+        hello = 'Hello world'
         return render.index(hello)
 
 if __name__ == "__main__":
