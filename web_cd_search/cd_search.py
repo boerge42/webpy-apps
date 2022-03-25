@@ -7,7 +7,6 @@
 # https://stackoverflow.com/questions/9134553/web-py-todo-list-with-login
 # https://webpy.org/docs/0.3/sessions
 #
-# login-Felder leeren???!!!
 #
 # ---------
 # Have fun!
@@ -47,28 +46,33 @@ allowed = (
 )
 
 # ***************************************************************
+def get_login_form():
+    form = web.form.Form( web.form.Textbox('username', description="user: ", value=''),
+    web.form.Password('password', description="password: ", value=''),
+    web.form.Button('Login'),
+    )
+    return form
+
+# ***************************************************************
 class Login:
 
-    form = web.form.Form( web.form.Textbox('username', description="user: ", value=''),
-        web.form.Password('password', description="password: ", value=''),
-        web.form.Button('Login'),
-        )
+    f = get_login_form()
 
     def GET(self):
-        f = self.form()
+        f = get_login_form()
         return render.login(f)
 
     def POST(self):
-        if not self.form.validates():
+        if not self.f.validates():
             return render.login(self.login_form)
 
-        username = self.form['username'].value
-        password = self.form['password'].value
+        username = self.f['username'].value
+        password = self.f['password'].value
         if (username,password) in allowed:
             session.logged_in = True
             raise web.seeother('/')
         else:
-            return render.login(self.form)
+            return render.login(self.f)
 
 # ***************************************************************
 class Logout:
