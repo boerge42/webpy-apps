@@ -1,0 +1,28 @@
+$def with (titles, form)
+
+<div class="search_form">
+<form action="" method="post">
+    $:form.render_css()
+</form>
+</div>
+
+<p>search result: $len(titles) titles</p>
+
+
+<table>
+	<caption>Search result</caption>
+	<tbody>
+    <tr>
+        <th>Title</th>
+        <th>Album</th>
+        <th>Artist</th>
+    </tr>
+$for title in titles:
+    <tr>
+        <td>$title.title</td>
+        <td><a href="/album_details$title.path">$title.album</a></td>
+        <td>$title.artist</td>
+    </tr>
+</tbody>
+<tfoot><tr></tr></tfoot>        
+</table>  

@@ -1,0 +1,29 @@
+$def with (artists, form)
+
+<div class="search_form">
+<form action="" method="post">
+    $:form.render_css()
+</form>
+</div>
+
+<div class="search_result">
+search result: $len(artists) artists
+</div>
+
+<table>
+	<caption>Search result</caption>
+	<tbody>
+    <tr>
+        <th>Artists</th>
+        <th>Album</th>
+        <th>Cover</th>
+    </tr>
+$for artist in artists:
+    <tr>
+        <td>$artist.artist</td>
+        <td><a href="/album_details$artist.path">$artist.album</a></td>
+        <td><img src="data:image/jpeg;base64,$artist.picture" height="70"/></td>
+    </tr>  
+</tbody>
+<tfoot><tr></tr></tfoot>
+</table>  

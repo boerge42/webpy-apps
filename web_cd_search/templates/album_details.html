@@ -1,0 +1,38 @@
+$def with (albums, cover)
+
+<p>
+<FONT SIZE="5">$albums[0].artist</FONT><br>
+<FONT SIZE="5">$albums[0].album</FONT><br>
+$albums[0].year
+</p>
+
+<!-- Flexbox-Container -->
+<div style="display: flex ; flex-wrap: wrap;">
+    <!-- Anfang linkes Element -->
+    <div style="flex: ; padding:1.5em 1em;">
+        <table>
+            <caption>Titles</caption>
+            <tbody>
+            <tr>
+                <th>Title</th>
+                <th>Time</th>
+            </tr>
+            $for album in albums:
+            <tr>
+                <td>$album.title</td>
+                <td>$album.duration_str</td>
+            </tr>
+            </tbody>
+            <tfoot><tr></tr></tfoot>    
+        </table>
+    <!-- Abschluss linkes Element --> 
+    </div>
+    <!-- Anfang rechtes Element -->
+    <div style="flex: ; padding:1.5em 1em;">
+        <div style="img: ; box-shadow: 10px 20px 15px silver; border: 1px solid #000000;">
+            <img src="data:image/jpeg;base64,$cover" height="300"/>
+        </div>
+    <!-- Abschluss rechtes Element --> 
+    </div>
+<!-- Abschluss Flexbox --> 
+</div>
