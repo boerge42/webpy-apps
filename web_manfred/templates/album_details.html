@@ -1,0 +1,75 @@
+$def with (record, titles)
+
+<p>
+<font size="2">album artist:</font><br><FONT SIZE="6">$record[0].Interpret</FONT><br>
+</p>
+<p>
+<font size="2">album title:</font><br><FONT SIZE="6">$record[0].Album</FONT><br>
+</p>
+
+<!-- Flexbox-Container -->
+<div style="display: flex ; flex-wrap: wrap;">
+
+    <div style="flex: ; padding-bottom:1em ; padding-right:1.5em;">
+	<center><font size="2">year:</font><br>$record[0].Jahr</center>
+    </div>
+
+    <div style="flex: ; padding-bottom:1em ; padding-right:1.5em;">
+	<center><font size="2">genre:</font><br>$record[0].Genre</center>
+    </div>
+
+    <div style="flex: ; padding-bottom:1em ; padding-right:1.5em;">
+	<center><font size="2">label:</font><br>$record[0].Herausgeber</center>
+    </div>
+
+    <div style="flex: ; padding-bottom:1em ; padding-right:1.5em;">
+	<center><font size="2">tracks:</font><br>$record[0].Tracks</center>
+    </div>
+
+    <div style="flex: ; padding-bottom:1em ; padding-right:1.5em;">
+	<center><font size="2">duration:</font><br>$record[0].Dauer</center>
+    </div>
+    
+    <div style="flex: ; padding-bottom:1em ; padding-right:1.5em;">
+	<center><font size="2">storage location:</font><br>$record[0].Lagerort<br>$record[0].Lagerplatz</center>
+    </div>    
+    
+    <div style="flex: ; padding-bottom:1em ; padding-right:1.5em;">
+	<center><font size="2">rating:</font><br>$record[0].Wertung</center>
+    </div>    
+    
+    <div style="flex: ; padding-bottom:1em ; padding-right:1.5em;">
+	<center><font size="2">note:</font><br>$record[0].Anmerkungen</center>
+    </div>    
+    
+    <div style="flex: ; padding-bottom:1em ; padding-right:1.5em;">
+	<center><font size="2">manfred:</font><br>$record[0].Manfred</center>
+    </div>    
+
+
+<!-- Abschluss Flexbox --> 
+
+</div>
+
+
+<table>
+    <caption>titles</caption>
+    <tbody>
+    <tr>
+	<th>track</th>
+	<th>title</th>
+	<th>duration</th>
+	<th>title artist</th>
+	<th>a notice</th>
+    </tr>
+$for title in titles:
+    <tr>
+	<td>$title.Track</td>
+	<td>$title.Titel</td>
+	<td>$title.Länge</td>
+	<td>$title.Interpret</td>
+	<td>$title.Hinweis</td>
+    </tr>  
+</tbody>
+<tfoot><tr></tr></tfoot>
+</table>  

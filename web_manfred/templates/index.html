@@ -1,0 +1,35 @@
+$def with(records, after_search, form)
+
+$if form != None:
+    <div class="search_form">
+    <form action="" method="post">
+        $:form.render_css()
+    </form>
+    </div>
+
+$if len(records) > 0:
+    <div class="search_result">
+    search result: $len(records) records
+    </div>
+
+    <table>
+        <caption>Search result</caption>
+        <tbody>
+        <tr>
+            <th>Interpret</th>
+            <th>Album</th>
+        </tr>
+    $for record in records:
+        <tr>
+            <td>$record.Interpret</td>
+            <td><a href="/album_details/${record.CDNr}">$record.Album</a></td>
+        </tr>  
+    </tbody>
+    <tfoot><tr></tr></tfoot>
+    </table>  
+
+$else:
+    $if after_search:
+        <p>
+        ...no records found!
+        </p>

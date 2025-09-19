@@ -1,0 +1,15 @@
+$def with (form, message) 
+
+<div class="search_form">
+<form method="POST" enctype="multipart/form-data">
+    $:form.render_css()
+</form>
+</div>
+
+$if message:
+    <p>
+    <h3>Logging upload:</h3>
+    $for l in message:
+        $l
+        <br>
+    </p>
