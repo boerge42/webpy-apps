@@ -29,7 +29,8 @@ visualisieren/steuern könnte, wenn  die entsprechenden Voraussetzungen gegeben 
 
 - [web_manfred](https://github.com/boerge42/webpy-apps/tree/master/web_manfred) &rarr; "Manfred" wollte auch sein CD-Inventar online durchsuchen können. 
 Besonderheit ist hier, dass eine [csv-Datei](https://de.wikipedia.org/wiki/CSV_(Dateiformat) mit einem definierten/festgelegten Format, welche via 
-Datei-Upload hochgeladen werden kann und nach diversen Kriterien analysiert/geprüft wird, in eine interne Datenbank (hier [sqlite](https://sqlite.org/)) 
+Datei-Upload hochgeladen werden kann, nach diversen [Kriterien analysiert/geprüft](https://github.com/boerge42/webpy-apps/blob/master/web_manfred/manfred_upload.png) 
+wird und dann entsprechend in eine interne Datenbank (hier [sqlite](https://sqlite.org/)) 
 importiert wird.
 
 ---
